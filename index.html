@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Para Jimenita 🎄✨</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #073b3a, #0b6e4f, #95d5b2);
+            font-family: 'Segoe UI', sans-serif;
+            color: #fff8e7;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 25px;
+            margin-top: 50px;
+            background: rgba(255, 255, 255, 0.13);
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+            border: 2px solid rgba(255, 215, 0, 0.5);
+        }
+
+        h1 {
+            color: #ffe08a;
+            text-shadow: 0 0 10px gold;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            width: 70%;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px 25px;
+            border: none;
+            background: #ffd60a;
+            color: #064420;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        button:hover {
+            background: #ffe27a;
+            transform: scale(1.08);
+        }
+
+        /* ❄ Nieve */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: white;
+            font-size: 1.1em;
+            opacity: 0.85;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh); }
+            100% { transform: translateY(110vh); }
+        }
+
+        #bloqueo {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 215, 0, 0.2);
+            border-radius: 15px;
+            box-shadow: 0 0 12px gold;
+        }
+
+        #mensajeFinal {
+            display: none;
+            margin-top: 40px;
+            font-size: 18px;
+            color: #fffcea;
+        }
+    </style>
+</head>
+<body>
+
+<!-- NIEVE -->
+<script>
+    for (let i = 0; i < 70; i++) {
+        let snow = document.createElement("div");
+        snow.className = "snowflake";
+        snow.innerHTML = "❄️";
+        snow.style.left = Math.random() * 100 + "vw";
+        snow.style.animationDuration = (Math.random() * 6 + 4) + "s";
+        snow.style.fontSize = (Math.random() * 10 + 8) + "px";
+        document.body.appendChild(snow);
+    }
+</script>
+
+<div class="container">
+    <h1>🎄 Hola Jimenita 🎄</h1>
+
+    <!-- PREGUNTA 1 -->
+    <div id="pregunta1">
+        <p>Primero una pista: <b>son 2 palabras y en minúsculas</b> ✍️✨</p>
+        <p>¿Qué técnico profesional hiciste? 🎓💚</p>
+
+        <input id="respuesta1" placeholder="respuesta aquí...">
+        <br>
+        <button onclick="verificar1()">Responder</button>
+    </div>
+
+    <!-- PREGUNTA 2 -->
+    <div id="pregunta2" style="display:none;">
+        <p>Tranquila jeje 😅❤️ ahora la segunda…</p>
+        <p>¿Quién es your best friend? 👀💛</p>
+
+        <input id="respuesta2" placeholder="escribe en minúsculas">
+        <br>
+        <button onclick="verificar2()">Responder</button>
+    </div>
+
+    <!-- BLOQUEO HASTA EL 25 -->
+    <div id="bloqueo">
+        <h2>🎄 Aún no puedes abrir tu mensaje 🎁</h2>
+        <p>Debes esperar hasta el <b>25 de diciembre</b> ❤️</p>
+        <h3 id="contador"></h3>
+    </div>
+
+    <!-- MENSAJE FINAL -->
+    <div id="mensajeFinal">
+        <h2>🎁✨ Ya puedes ver tu mensaje ✨🎁</h2>
+
+        <p>💚🎄✨
+            Querida **Jimenita**, tantas cosas por pensar al escribirte pero tan poco orden mental para ponerlo todo en palabras 😅🧠💫
+            No imaginé llegar a tener amistad con alguien tan alegre como vos 🌟💛 y es que no hace falta decirlo, porque lo transmites siempre:
+            desde una clase aburrida 💤📚 hasta un baile improvisado 💃🤣, desde una taza de café ☕💕 hasta un chiste mal contado 🤣😆.
+            Eres de esas personas que hacen falta en la vida… incluso cuando uno no sabía que las necesitaba 💚🌟.
+        </p>
+
+        <p>✨INCREÍBLE CREER✨
+            que volvería a sentirme en casa 🏡💞 después de tanto tiempo,
+            INCREÍBLE CREER que la universidad se hace más llevadera solo por ustedes 🎓💛,
+            INCREÍBLE CREER cuántas cosas hemos vivido en este año y medio y cuántas faltan 🤝😂,
+            e INCREÍBLE CREER que alguien ajeno pudiera hacerme sentir tan apreciado ✨❤️.
+        </p>
+
+        <p>Y te soy sincero… no busco el “momento perfecto” para decirles algo, sino el de más valor 🕊️💛.
+            Nunca generaría problemas ni malentendidos, lo sabes bien 🤍✨;
+            solo quiero cuidar lo que tenemos como grupo… ese grupito que ya es casi un pacto de sangre 😂🩸🤝
+            (y sí… me comprometo a NO pasarme a la nocturna 😭🤣).
+        </p>
+
+        <p>Por último 💚💫
+            Nunca dejes que una mala racha apague una buena 🌈🌟.
+            Siempre estaré para ayudarte cuando lo necesites 🤍🤗.
+            Y JAMÁS dudes de tus capacidades: eres de las más dedicadas y brillantes del grupo ✨📚💛.
+        </p>
+
+        <p>🎄❤️ Que tengas una hermosa Navidad tú y toda tu familia,
+            y un feliz y próspero Año Nuevo lleno de cosas preciosas ✨🎆.
+        </p>
+    </div>
+
+</div>
+
+<script>
+    function verificar1() {
+        let r = document.getElementById("respuesta1").value.trim().toLowerCase();
+        if (r === "belleza integral") {
+            pasar();
+        } else {
+            document.getElementById("pregunta1").style.display = "none";
+            document.getElementById("pregunta2").style.display = "block";
+        }
+    }
+
+    function verificar2() {
+        /* Pase lo que pase — incluso si falla — igual continua */
+        pasar();
+    }
+
+    function pasar() {
+        document.getElementById("pregunta1").style.display = "none";
+        document.getElementById("pregunta2").style.display = "none";
+        iniciarBloqueo();
+    }
+
+    function iniciarBloqueo() {
+        const bloqueo = document.getElementById("bloqueo");
+        bloqueo.style.display = "block";
+
+        const objetivo = new Date("December 25, 2025 00:00:00").getTime();
+
+        const intervalo = setInterval(() => {
+            let ahora = Date.now();
+            let diff = objetivo - ahora;
+
+            if (diff <= 0) {
+                clearInterval(intervalo);
+                bloqueo.style.display = "none";
+                document.getElementById("mensajeFinal").style.display = "block";
+                return;
+            }
+
+            let días = Math.floor(diff / (1000*60*60*24));
+            let horas = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+            let mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+            let segs = Math.floor((diff % (1000*60)) / 1000);
+
+            document.getElementById("contador").innerHTML =
+                `⏳ ${días} días • ${horas}h • ${mins}m • ${segs}s`;
+        }, 1000);
+    }
+</script>
+
+</body>
+</html>
